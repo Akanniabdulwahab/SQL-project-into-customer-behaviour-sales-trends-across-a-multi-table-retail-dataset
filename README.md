@@ -169,8 +169,48 @@ If "USA," "US," and "United States" are treated as three separate values, no sin
 
 Every categorical column now has a single, consistent set of values, confirmed via SELECT DISTINCT after each update.
 
+Same cleaning process was applied to gender, payment_method, order_status
+
+**d. Non-standard missing-value placeholders**
+
+SQL's IS NULL only recognizes true NULL values. Text like 'n/a' or 'unknown' is treated as a real value by aggregate functions, silently corrupting averages and counts unless explicitly converted first.
 
 
+
+All placeholder text was converted to true NULL before any date conversion or numeric aggregation was performed. This ensures that calculations like average discount or average fulfillment time correctly exclude missing data rather than silently mishandling placeholder text
+
+**e. Invalid numeric values (age, discount, quantity)**
+
+An age of 0 or a discount of 150% isn't just noisy it's logically impossible, and including it would distort every average calculated on that column.
+
+Note: the discount-percent decision mapping invalid values to 0 rather than NULL. It assumes an invalid discount most likely represents "no discount applied" rather than genuinely unknown data, which very slightly pulls average-discount figures downward compared to treating those rows as missing.
+
+
+**f.  Zero-quantity orders needed context, not a blanket rule**
+
+A quantity = 0 order isn't automatically bad data if the order was cancelled, zero quantity fulfilled is logically consistent. Treating all zero-quantity rows identically risks either keeping genuine errors or discarding legitimate records.
+
+
+
+-- this step deliberately checked whether zero-quantity rows clustered around
+-- 'Cancelled' status before deciding how to treat them
+
+Ultimately, all rows with quantity IS NULL OR quantity = 0 were removed in the final cleanup step, as they could not contribute a meaningful quantity value to revenue calculations regardless of the reason. This means the small number of legitimately-zero cancelled-order rows were removed alongside genuinely invalid rows.
+Business impact: revenue and quantity figures in this report reflect only orders with a valid, non-zero quantity. One consequence: the Cancelled order count reported later (800 orders) reflects orders with a valid quantity that were subsequently cancelled it does not include any zero-quantity cancellations that existed prior to this cleanup step, since those rows were removed entirely.
+
+f. Currency-formatted price strings
+
+A column containing "$42.58", "126.36 USD", and "42.58" in the same field cannot be summed, averaged, or compared numerically until it's a consistent number.
+
+
+All currency symbols and suffixes were stripped, leaving a clean numeric string ready for type conversion. This enables every revenue calculation in this report without this step, unit_price could not be multiplied by quantity at all.
+
+g. Type Conversion
+
+Once each column passed validation, it was converted to its proper type:
+
+
+Note on precision: unit_price and discount_percent were converted to INT rather than DECIMAL. This means cent-level price precision and fractional discount percentages (e.g. 15.5%) were rounded before revenue was calculated. The revenue figures throughout this report are therefore accurate to the nearest whole currency unit, not the cent a reasonable trade-off for high-level business analysis, but worth noting for anyone reconciling these figures against a system that retains full decimal precision.
 
 
 
