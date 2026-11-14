@@ -114,16 +114,44 @@ The project followed four broad stages:
 A key methodological discipline maintained throughout raw source tables were never modified directly. All cleaning was performed on working copies (customers_copy2, orders_copy2), so the original import remains available to restart from at any point.
 
 ## Data Import & Initial Inspection
+
 Each dataset was first loaded into staging tables (customers, orders, products) as-is, then working copies (customers_copy, orders_copy, products_copy) were created to preserve the original raw data untouched:
 
+<img width="836" height="535" alt="1 0 Original dataset (customer table)" src="https://github.com/user-attachments/assets/3e431621-cf8e-48b0-9654-2b286711bd7b" />
 
+This "copy-first" approach is a standard safeguard. it ensures the original import is always available to reference or restart from if a cleaning step goes wrong.
 
+**Data Quality Assessment**
 
+Inspection of the raw data surfaced the following confirmed issues (each addressed in Section 8):
 
+●	Duplicate records in both customers_copy and orders_copy
 
+●	Inconsistent identifier formatting customer_id and order_id values appeared in multiple formats (e.g. CUST00001, cust-1, C1) with inconsistent whitespace
 
+●	Inconsistent categorical values country, gender, payment_method, and order_status each contained multiple casing/spelling variants representing the same underlying value
 
+●	Non-standard missing-value placeholders’ text such as 'n/a', 'unknown', 'none', '-', and empty strings were used instead of true SQL NULL
 
+●	Invalid numeric values ages outside a plausible human range, discount percentages outside 0–100%, and negative order quantities
+
+●	Text-formatted dates and currency date and price columns stored as unformatted text, preventing direct numeric or date-based analysis
+
+## Data Cleaning From Raw Data to Trusted Data
+
+Before analyzing performance, the first challenge was determining whether the data could be trusted at all. Below is the major cleaning problems addressed, each following the same investigate-then-fix pattern.
+
+**a. Duplicate customer and order records**
+
+Duplicate rows silently inflate counts, revenue totals, and customer metrics.  A customer counted twice looks like two customers; an order counted twice looks like two purchases.
+
+<img width="985" height="541" alt="3 1 removing duplicate (customer table) 5" src="https://github.com/user-attachments/assets/ea15c02c-ef42-42f3-826e-b47000ecfd80" />
+
+15 duplicate customer records were identified and removed (835 to 820). A number of duplicate order records were similarly removed as part of the broader orders cleanup (5,020 to 4,804, combined with the invalid-quantity row removal described below).
+
+<img width="917" height="448" alt="3 1 removing duplicate (customer table) 6" src="https://github.com/user-attachments/assets/a0bea973-ac41-4408-9335-10aced5eb391" />
+
+Same duplicate removal steps was also carried out on the order table.
 
 
 
