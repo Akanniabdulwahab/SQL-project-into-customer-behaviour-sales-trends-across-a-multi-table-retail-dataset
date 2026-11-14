@@ -153,6 +153,21 @@ Duplicate rows silently inflate counts, revenue totals, and customer metrics.  A
 
 Same duplicate removal steps was also carried out on the order table.
 
+**b. Inconsistent ID formatting (customer_id, order_id)**
+
+If the same customer's ID appears as CUST00001 in one table and cust-1 in another, joins between tables will silently fail to match, undercounting that customer's activity without any error being raised.
+
+<img width="1022" height="552" alt="4 1 standardizing the customer_id from (customers_copy table) 0" src="https://github.com/user-attachments/assets/af3ed1cf-ba34-4cff-97d8-dcf45d238353" />
+
+Every customer_id in all tables and order_id in the order_table now reliably matches its counterpart in customers, making every join in this report trustworthy.
+
+**c. Inconsistent categorical values (country, gender, payment_method, order_status)**
+
+If "USA," "US," and "United States" are treated as three separate values, no single query can correctly answer "how many customers are in the United States?"
+
+<img width="894" height="531" alt="4 3 standardizing country(customers_copy2 table)" src="https://github.com/user-attachments/assets/647ec41f-09fd-486f-9e3d-5d22ce37699a" />
+
+Every categorical column now has a single, consistent set of values, confirmed via SELECT DISTINCT after each update.
 
 
 
