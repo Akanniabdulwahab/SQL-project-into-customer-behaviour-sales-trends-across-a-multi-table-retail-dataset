@@ -175,13 +175,16 @@ Same cleaning process was applied to gender, payment_method, order_status
 
 SQL's IS NULL only recognizes true NULL values. Text like 'n/a' or 'unknown' is treated as a real value by aggregate functions, silently corrupting averages and counts unless explicitly converted first.
 
-
+<img width="573" height="512" alt="6 2 standardizing sign_up date (customers_copy2 table)" src="https://github.com/user-attachments/assets/25c11762-84ad-4ed9-b38a-e44c864658e2" />
 
 All placeholder text was converted to true NULL before any date conversion or numeric aggregation was performed. This ensures that calculations like average discount or average fulfillment time correctly exclude missing data rather than silently mishandling placeholder text
+
+Same step was applied to signup_date, order_date, ship_date, loyalty_tier, and discount_percent
 
 **e. Invalid numeric values (age, discount, quantity)**
 
 An age of 0 or a discount of 150% isn't just noisy it's logically impossible, and including it would distort every average calculated on that column.
+
 
 Note: the discount-percent decision mapping invalid values to 0 rather than NULL. It assumes an invalid discount most likely represents "no discount applied" rather than genuinely unknown data, which very slightly pulls average-discount figures downward compared to treating those rows as missing.
 
@@ -198,14 +201,15 @@ A quantity = 0 order isn't automatically bad data if the order was cancelled, ze
 Ultimately, all rows with quantity IS NULL OR quantity = 0 were removed in the final cleanup step, as they could not contribute a meaningful quantity value to revenue calculations regardless of the reason. This means the small number of legitimately-zero cancelled-order rows were removed alongside genuinely invalid rows.
 Business impact: revenue and quantity figures in this report reflect only orders with a valid, non-zero quantity. One consequence: the Cancelled order count reported later (800 orders) reflects orders with a valid quantity that were subsequently cancelled it does not include any zero-quantity cancellations that existed prior to this cleanup step, since those rows were removed entirely.
 
-f. Currency-formatted price strings
+**g Currency-formatted price strings**
 
 A column containing "$42.58", "126.36 USD", and "42.58" in the same field cannot be summed, averaged, or compared numerically until it's a consistent number.
 
+<img width="653" height="521" alt="13 2 standardizing unit price (orders_copy2 table)" src="https://github.com/user-attachments/assets/406984ce-015e-410a-ac71-8c81d8c64cc1" />
 
 All currency symbols and suffixes were stripped, leaving a clean numeric string ready for type conversion. This enables every revenue calculation in this report without this step, unit_price could not be multiplied by quantity at all.
 
-g. Type Conversion
+**h. Type Conversion**
 
 Once each column passed validation, it was converted to its proper type:
 
