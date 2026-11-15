@@ -185,9 +185,11 @@ Same step was applied to signup_date, order_date, ship_date, loyalty_tier, and d
 
 An age of 0 or a discount of 150% isn't just noisy it's logically impossible, and including it would distort every average calculated on that column.
 
+<img width="651" height="516" alt="5 1 standardizing age (customers_copy2 table)" src="https://github.com/user-attachments/assets/2cf21aa5-3544-41b8-bfb5-ea197c897bcb" />
 
 Note: the discount-percent decision mapping invalid values to 0 rather than NULL. It assumes an invalid discount most likely represents "no discount applied" rather than genuinely unknown data, which very slightly pulls average-discount figures downward compared to treating those rows as missing.
 
+<img width="510" height="295" alt="5 2 standardizing age (customers_copy2 table)" src="https://github.com/user-attachments/assets/ff0ae95c-ea0a-451a-954b-8eff4bc11bab" />
 
 **f.  Zero-quantity orders needed context, not a blanket rule**
 
