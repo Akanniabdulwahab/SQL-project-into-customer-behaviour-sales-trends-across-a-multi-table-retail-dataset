@@ -197,7 +197,7 @@ Once each column passed validation, it was converted to its proper type:
 Discount_percent were converted to INT rather than DECIMAL. This means cent-level fractional discount percentages (e.g. 15.5%) were rounded before revenue was calculated. The revenue figures throughout this report are therefore accurate to the nearest whole currency unit, not the cent a reasonable trade-off for high-level business analysis, but worth noting for anyone reconciling these figures against a system that retains full decimal precision.
 
 
-##Exploratory Data Analysis
+## Exploratory Data Analysis
 With the data now cleaned, the next set of questions should be answering business performance starting with a foundational calculation that underlies every subsequent finding: REVENUE.
 
 <img width="845" height="523" alt="1" src="https://github.com/user-attachments/assets/81b004ab-b168-4ae8-a366-d69570671cc5" />
@@ -240,7 +240,7 @@ Wireless keyboard has more quantity sold than running belt but generated less re
 
 <img width="495" height="324" alt="12" src="https://github.com/user-attachments/assets/a10c6731-62e8-443e-ada1-b4dc7f302210" />
 
-##Reccomendations
+## Reccomendations
 
 - Apparel and the Running Belt outperform on revenue despite not leading on order/unit count. Check to determine whether this divergence reflects healthy premium pricing or an opportunity to grow volume on already-high-value items.
 
