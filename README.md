@@ -197,25 +197,56 @@ Once each column passed validation, it was converted to its proper type:
 Discount_percent were converted to INT rather than DECIMAL. This means cent-level fractional discount percentages (e.g. 15.5%) were rounded before revenue was calculated. The revenue figures throughout this report are therefore accurate to the nearest whole currency unit, not the cent a reasonable trade-off for high-level business analysis, but worth noting for anyone reconciling these figures against a system that retains full decimal precision.
 
 
+##Exploratory Data Analysis
+With the data now cleaned, the next set of questions should be answering business performance starting with a foundational calculation that underlies every subsequent finding: REVENUE.
 
+<img width="845" height="523" alt="1" src="https://github.com/user-attachments/assets/81b004ab-b168-4ae8-a366-d69570671cc5" />
 
+This generated column automatically calculates each order line's actual revenue (price minus discount).
 
+##Customer Analysis##
 
+**Age distribution**
 
+<img width="521" height="535" alt="2" src="https://github.com/user-attachments/assets/007eb513-e027-43a1-9e1e-411a0e085165" />
 
+The customer base is weighted toward older age brackets — the 55+ population (296 customers) outnumbers the under-35 population (202 customers).
 
+**Gender distribution**
 
+<img width="402" height="282" alt="3" src="https://github.com/user-attachments/assets/0f33dce0-3451-47ab-a7fe-0ff216a70196" />
 
+Roughly 9% of customers have no recorded gender. B
 
+**Customers per Country**
 
+Country distribution is close with no single market dominating. Germany leading only slightly.
 
+<img width="472" height="362" alt="4" src="https://github.com/user-attachments/assets/ca568949-a399-4106-b526-a445f49abd25" />
 
+**Country by revenue**
 
+<img width="500" height="373" alt="5" src="https://github.com/user-attachments/assets/50d101bb-5917-4194-96f8-bc9670b8089a" />
 
+Canada brings in the most revenue which ranks fourth for the mos number of customers
 
+**Best selling products by quantity sold and revenue generated^^
 
+<img width="675" height="447" alt="9" src="https://github.com/user-attachments/assets/e2b9a4bf-7968-4b70-91ee-e8482f98b9e6" />
 
+Wireless keyboard has more quantity sold than running belt but generated less revenue
 
+**Most used payment method**
+
+<img width="495" height="324" alt="12" src="https://github.com/user-attachments/assets/a10c6731-62e8-443e-ada1-b4dc7f302210" />
+
+##Reccomendations
+
+- Apparel and the Running Belt outperform on revenue despite not leading on order/unit count. Check to determine whether this divergence reflects healthy premium pricing or an opportunity to grow volume on already-high-value items.
+
+- 9% of customers are missing gender data and 8% are missing loyalty tier assignment. Review the signup/enrollment flow for opportunities to capture this data more completely, without adding friction.
+
+- 
 
 
 
