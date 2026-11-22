@@ -200,7 +200,7 @@ Once each column passed validation, it was converted to its proper type:
 
 Discount_percent were converted to INT rather than DECIMAL. This means cent-level fractional discount percentages (e.g. 15.5%) were rounded before revenue was calculated. The revenue figures throughout this report are therefore accurate to the nearest whole currency unit, not the cent a reasonable trade-off for high-level business analysis, but worth noting for anyone reconciling these figures against a system that retains full decimal precision.
 
-##Cleaned Dataset##
+## Cleaned Dataset
 
 This is a cleaned version of the Dataset
 
