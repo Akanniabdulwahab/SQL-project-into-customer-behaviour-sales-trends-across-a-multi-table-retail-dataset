@@ -215,7 +215,7 @@ With the data now cleaned, the next set of questions should be answering busines
 
 This generated column automatically calculates each order line's actual revenue (price minus discount).
 
-##Customer Analysis##
+## Customer Analysis
 
 **Age distribution**
 
@@ -253,41 +253,41 @@ Wireless keyboard has more quantity sold than running belt but generated less re
 
 **Revenue per year**
 
-<img width="563" height="325" alt="22" src="https://github.com/user-attachments/assets/38d22259-d8d6-4482-990b-b219a4090407" />for 20226
+<img width="563" height="325" alt="22" src="https://github.com/user-attachments/assets/38d22259-d8d6-4482-990b-b219a4090407" />
 
 For 2026, We are still in the month of July. So as at the time of this analysis we only have the revenue of 2024, 2025 and the first seven month of 2026.
 
 ## Key Findings amd Recommendations
 
-- Category and product revenue leadership diverge from order/unit volume leadership: Electronics leads on order count (839) but Apparel leads on revenue ($570,985.57 vs. $540,789.31) while the Wireless Keyboard leads on units sold (517) but the Running Belt leads on revenue ($103,678.27).
+- **Category and product revenue leadership diverge from order/unit volume leadership:** Electronics leads on order count (839) but Apparel leads on revenue ($570,985.57 vs. $540,789.31) while the Wireless Keyboard leads on units sold (517) but the Running Belt leads on revenue ($103,678.27).
 
-Why it matters: decisions based on "what's popular" and decisions based on "what's valuable" point in different directions here.
+**Why it matters:** decisions based on "what's popular" and decisions based on "what's valuable" point in different directions here.
 
-Recommendation: Prioritize revenue and margin data(difference between revenue and cost) not just volume when making merchandising and inventory decisions.
+**Recommendation:** Prioritize revenue and margin data(difference between revenue and cost) not just volume when making merchandising and inventory decisions.
 
-- The customer base skews toward older age brackets: The 55+ population (296 customers) outnumbers the under-35 population (202 customers). The marketing, product selection for younger shoppers may not reflect the actual customer majority.
+- **The customer base skews toward older age brackets:** The 55+ population (296 customers) outnumbers the under-35 population (202 customers). The marketing, product selection for younger shoppers may not reflect the actual customer majority.
 
-Why it matters: marketing, product selection for younger shoppers may not reflect the actual customer majority.
+**Why it matters:** marketing, product selection for younger shoppers may not reflect the actual customer majority.
 
-Recommendation: Validate whether current marketing spend and product positioning align with this demographic reality.
+**Recommendation:** Validate whether current marketing spend and product positioning align with this demographic reality.
 
-- Order status distribution is unusually uniform: All six statuses fall within a 0.29-percentage-point band (16.51%–16.80%).
+- **Order status distribution is unusually uniform:** All six statuses fall within a 0.29-percentage-point band (16.51%–16.80%).
   
-Why it matters: an operationally healthy business typically shows Delivered as the clear plurality outcome; near-equal distribution across all outcomes (including a 16.65% cancellation rate) is atypical and worth validating.
+**Why it matters:** an operationally healthy business typically shows Delivered as the clear plurality outcome; near-equal distribution across all outcomes (including a 16.65% cancellation rate) is atypical and worth validating.
 
-Recommendation: confirm this distribution against the source operational system before using it to set cancellation/return benchmarks.
+**Recommendation:** confirm this distribution against the source operational system before using it to set cancellation/return benchmarks.
 
-- Nearly one in ten customer records is missing gender data, and roughly one in twelve is missing a loyalty tier: 74 of 820 customers have no recorded gender (~9%); 68 of 820 have no loyalty tier (~8%).
+- **Nearly one in ten customer records is missing gender data, and roughly one in twelve is missing a loyalty tier:** 74 of 820 customers have no recorded gender (~9%); 68 of 820 have no loyalty tier (~8%).
 
-Why it matters: incomplete demographic and program data limits how precisely future segmentation or personalization efforts can be targeted.
+**Why it matters:** incomplete demographic and program data limits how precisely future segmentation or personalization efforts can be targeted.
 
-Recommendation: review data capture at signup/enrollment to reduce this gap going forward.
+**Recommendation:** review data capture at signup/enrollment to reduce this gap going forward.
 
-- Revenue is not geographically concentrated: Country-level revenue ranges only from $367,809 (India) to $422,514 (Canada). No market contributes a dominant share.
+- **Revenue is not geographically concentrated:** Country-level revenue ranges only from $367,809 (India) to $422,514 (Canada). No market contributes a dominant share.
 
-Why it matters: the business is not overexposed to any single market's economic or regulatory conditions.
+**Why it matters:** the business is not overexposed to any single market's economic or regulatory conditions.
 
-Recommendation: international strategy can reasonably continue to treat these markets as comparably important, rather than concentrating resources on one.
+**Recommendation:** international strategy can reasonably continue to treat these markets as comparably important, rather than concentrating resources on one.
 
 ## Limitations
 
