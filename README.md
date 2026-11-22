@@ -289,7 +289,8 @@ Why it matters: the business is not overexposed to any single market's economic 
 
 Recommendation: international strategy can reasonably continue to treat these markets as comparably important, rather than concentrating resources on one.
 
-Limitations
+## Limitations
+
 ●	No margin/cost data: revenue figures indicate what was earned, but not profitability. The volume vs revenue divergence findings would benefit significantly from margin data to determine if it should change strategy.
 
 ●	No marketing or acquisition data: it's not possible to connect customer acquisition source to later spending behavior with this dataset alone.
