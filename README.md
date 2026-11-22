@@ -241,7 +241,7 @@ Country distribution is close with no single market dominating. Germany leading 
 
 Canada brings in the most revenue which ranks fourth for the mos number of customers
 
-**Best selling products by quantity sold and revenue generated^^
+**Best selling products by quantity sold and revenue generated**
 
 <img width="675" height="447" alt="9" src="https://github.com/user-attachments/assets/e2b9a4bf-7968-4b70-91ee-e8482f98b9e6" />
 
@@ -251,7 +251,7 @@ Wireless keyboard has more quantity sold than running belt but generated less re
 
 <img width="495" height="324" alt="12" src="https://github.com/user-attachments/assets/a10c6731-62e8-443e-ada1-b4dc7f302210" />
 
-^^Revenue per year^^
+**Revenue per year**
 
 <img width="563" height="325" alt="22" src="https://github.com/user-attachments/assets/38d22259-d8d6-4482-990b-b219a4090407" />for 20226
 
