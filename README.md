@@ -117,7 +117,11 @@ A key methodological discipline maintained throughout raw source tables were nev
 
 Each dataset was first loaded into staging tables (customers, orders, products) as-is, then working copies (customers_copy, orders_copy, products_copy) were created to preserve the original raw data untouched:
 
-<img width="836" height="535" alt="1 0 Original dataset (customer table)" src="https://github.com/user-attachments/assets/3e431621-cf8e-48b0-9654-2b286711bd7b" />
+<img width="806" height="398" alt="1 0 Original dataset (customer table)" src="https://github.com/user-attachments/assets/5b13afd3-070e-4746-9695-64ca0e8786d0" />
+
+<img width="902" height="398" alt="1 1 Original dataset order table)" src="https://github.com/user-attachments/assets/05068e36-532f-4a2a-9f5e-573bcf8356c4" />
+
+<img width="313" height="397" alt="1 2 Original dataset (product table)" src="https://github.com/user-attachments/assets/1d5207fa-4317-40ee-ba5c-cdf018863c8a" />
 
 This "copy-first" approach is a standard safeguard. it ensures the original import is always available to reference or restart from if a cleaning step goes wrong.
 
@@ -196,6 +200,13 @@ Once each column passed validation, it was converted to its proper type:
 
 Discount_percent were converted to INT rather than DECIMAL. This means cent-level fractional discount percentages (e.g. 15.5%) were rounded before revenue was calculated. The revenue figures throughout this report are therefore accurate to the nearest whole currency unit, not the cent a reasonable trade-off for high-level business analysis, but worth noting for anyone reconciling these figures against a system that retains full decimal precision.
 
+##Cleaned Dataset##
+
+This is a cleaned version of the Dataset
+
+<img width="781" height="395" alt="16 1 customer_cleaned" src="https://github.com/user-attachments/assets/a6998226-8fa8-4653-9e6b-125159dc4392" />
+
+<img width="934" height="398" alt="16 2 order_cleaned" src="https://github.com/user-attachments/assets/a3b8d717-88aa-4ace-80c9-4a05f3cb5a7c" />
 
 ## Exploratory Data Analysis
 With the data now cleaned, the next set of questions should be answering business performance starting with a foundational calculation that underlies every subsequent finding: REVENUE.
