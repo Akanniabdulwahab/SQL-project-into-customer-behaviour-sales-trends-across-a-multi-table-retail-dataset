@@ -251,6 +251,12 @@ Wireless keyboard has more quantity sold than running belt but generated less re
 
 <img width="495" height="324" alt="12" src="https://github.com/user-attachments/assets/a10c6731-62e8-443e-ada1-b4dc7f302210" />
 
+^^Revenue per year^^
+
+<img width="563" height="325" alt="22" src="https://github.com/user-attachments/assets/38d22259-d8d6-4482-990b-b219a4090407" />for 20226
+
+For 2026, We are still in the month of July. So as at the time of this analysis we only have the revenue of 2024, 2025 and the first seven month of 2026.
+
 ## Reccomendations
 
 - Apparel and the Running Belt outperform on revenue despite not leading on order/unit count. Check to determine whether this divergence reflects healthy premium pricing or an opportunity to grow volume on already-high-value items.
