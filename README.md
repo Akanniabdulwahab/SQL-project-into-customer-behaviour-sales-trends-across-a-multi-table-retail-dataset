@@ -299,7 +299,7 @@ Limitations
 ●	Zero-quantity order removal: all zero/null-quantity rows were removed in final cleanup, including any that may have reflected legitimately-zero cancelled orders.
 
 
-21. Final Conclusion
+## Conclusion
 This project's real value was never simply in writing SQL queries, it was in transforming an unreliable, inconsistent dataset into evidence trustworthy enough to support business decisions, and then using that evidence to tell a coherent story about performance.
 
 The path from raw data to insight followed a clear path: raw, systematic investigation of data quality issues, validation, exploratory analysis, business-relevant findings and recommendations. At each stage, the guiding principle was the same one that should guide any real analytical work: don't assume a value is wrong or a pattern is meaningful  investigate it, and let the evidence drive the conclusion.
