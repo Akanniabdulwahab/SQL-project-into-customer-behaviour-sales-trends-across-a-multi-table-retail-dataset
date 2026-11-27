@@ -305,7 +305,7 @@ This project's real value was never simply in writing SQL queries, it was in tra
 
 The path from raw data to insight followed a clear path: raw, systematic investigation of data quality issues, validation, exploratory analysis, business-relevant findings and recommendations. At each stage, the guiding principle was the same one that should guide any real analytical work: don't assume a value is wrong or a pattern is meaningful  investigate it, and let the evidence drive the conclusion.
 
-The findings themselves. a volume-vs-revenue divergence that challenges assumptions about what "popular" means, a loyalty program that may not be achieving its intended effect on order size, and an order status distribution unusual enough to warrant validation before it's trusted are the kind of results that change how a business would act, not just numbers that confirm what was already believed.
+The findings themselves, a volume-vs-revenue divergence that challenges assumptions about what "popular" means, a loyalty program that may not be achieving its intended effect on order size, and an order status distribution unusual enough to warrant validation before it's trusted are the kind of results that change how a business would act, not just numbers that confirm what was already believed.
 
 That is the standard this project aimed to meet, not just querying tables, but using data as evidence for better decisions.
 
