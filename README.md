@@ -1,3 +1,5 @@
+# SALES DATA CLEANING & ANALYSIS Using SQL
+
 ## Executive Summary
 This project set out to answer a question every retail business eventually has to ask: what is our data actually telling us about our customers, our products, and our sales performance and can we trust it enough to act on it? The analysis worked with three related datasets: customers (835 records), orders (5,020 records), and products (43 records) representing a typical e-commerce operation. Before any business question could be answered, the raw data required significant investigation and cleaning, inconsistent identifiers, mixed date formats, non-standard missing-value placeholders, invalid numeric values, and duplicate records all had to be identified and resolved using SQL.
 After cleaning, the dataset was reduced from 5,898 combined raw records (835 customers + 5,020 orders + 43 products) to 5,667 trustworthy records (820 customers + 4,804 orders + 43 products), and was then used to answer a few business questions spanning customer behavior, product performance, and sales trends.
